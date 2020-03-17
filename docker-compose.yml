@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+
+  server:
+
+    build: server/
+
+    command: python ./server.py
+
+    ports:
+      - 8081:8081
+
+  client:
+    
+    build: client/
+
+ 
+    command: python ./client.py
+
+
+    network_mode: host
+
+ 
+    depends_on:
+      - server
