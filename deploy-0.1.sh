@@ -13,12 +13,12 @@ pip install --upgrade pip
 yum install git -y
 adduser user
 echo "userpassword2" | passwd --stdin user
-adduser nikolyp
+adduser nikolayp
 echo "userpassword2" | passwd --stdin nikolayp
 yum install -y nano
 yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum install -y docker-ce docker-ce-cli containerd.io --nobest
+yum install -y docker-ce docker-ce-cli containerd.io --nobest -y
 usermod -aG docker $(whoami)
 systemctl enable docker.service
 systemctl start docker.service
